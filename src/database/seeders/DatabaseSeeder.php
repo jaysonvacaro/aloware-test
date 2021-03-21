@@ -2,6 +2,7 @@
 
 namespace Database\Seeders;
 
+use App\Models\Comment;
 use Illuminate\Database\Seeder;
 
 class DatabaseSeeder extends Seeder
@@ -13,6 +14,28 @@ class DatabaseSeeder extends Seeder
      */
     public function run()
     {
-        // \App\Models\User::factory(10)->create();
+        Comment::create(
+            [
+                'username' => 'username1',
+                'body' => 'Comment1'
+            ]
+        );
+
+        Comment::create(
+            [
+                'username' => 'username1',
+                'body' => 'Comment2',
+                'parent_id' => 1
+            ]
+        );
+
+        Comment::create(
+            [
+                'username' => 'username1',
+                'body' => 'Comment3',
+                'parent_id' => 2
+            ]
+        );
+
     }
 }
